@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<!-- ognl开启 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<!-- 开启动态方法调用* -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <!-- 开发者模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 国际编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/> 
+	<!-- 配置文件修改后重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true" />   
+	    
+	<package name="firstPackage" extends="struts-default" namespace="/">
+		<action name="*" class="userAction" method = "{1}">
+			<result name="success">/success.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+	</package>
+		
+</struts>
